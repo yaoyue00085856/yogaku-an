@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>遙嶽庵-古地図と歴史資料置き場-</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f6efe6;
+      --accent:#2b4d5a;
+      --muted:#7a6f5f;
+      --card-shadow: 0 8px 20px rgba(20,20,20,0.12);
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{
+      background: var(--paper) url('paper-texture.jpg') repeat;
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      padding:32px;
+    }
+    .container{max-width:1100px;margin:0 auto;}
+    header.hero{
+      display:flex;gap:20px;align-items:center;margin-bottom:28px;
+    }
+    .repo-card{
+      background:#fff;padding:20px;border-radius:8px;box-shadow:var(--card-shadow);
+      display:flex;gap:16px;align-items:center;width:100%;
+      transform: rotate(-0.5deg);
+    }
+    .repo-meta h1{font-family:'Noto Serif JP', serif;margin:0;color:var(--accent);font-size:1.6rem;}
+    .repo-meta p{margin:6px 0;color:var(--muted);}
+    .repo-actions a{display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:600;}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .card{
+      background:#fff;padding:12px;border-radius:6px;box-shadow:var(--card-shadow);
+      transition:transform .18s ease, box-shadow .18s ease;
+      transform-origin:center;
+    }
+    .card:hover{transform:translateY(-6px) rotate(0.5deg);box-shadow:0 18px 40px rgba(20,20,20,0.18);}
+    .thumb{width:100%;height:180px;object-fit:cover;border-radius:4px;display:block;}
+    .card h3{margin:10px 0 6px 0;font-size:1.05rem;color:var(--accent);font-family:'Noto Serif JP', serif;}
+    .card p{margin:0 0 10px 0;color:var(--muted);font-size:0.95rem;}
+    .card a.btn{display:inline-block;padding:8px 10px;background:#fff;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:6px;font-weight:600;}
+    @media(max-width:900px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:600px){ header.hero{flex-direction:column;align-items:stretch;} .gallery{grid-template-columns:1fr;} .thumb{height:220px;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero" role="banner">
+      <div class="repo-card" aria-labelledby="repo-title">
+        <div style="width:120px;height:120px;flex:0 0 120px;">
+          <img src="images/manas.jpg" alt="manas" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
+        </div>
+        <div class="repo-meta">
+          <h1 id="repo-title">Kyudaka_agrivillage</h1>
+          <p>幕末期近世村領域データを公開しています。</p>
+          <div class="repo-actions">
+            <a href="https://github.com/yaoyue00085856/Kyudaka_agrivillage" target="_blank" rel="noopener noreferrer">GitHub リポジトリを見る</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="maps-title">
+        <h2 id="maps-title" style="font-family:'Noto Serif JP', serif;color:var(--accent);">関連マップ</h2>
+        <div class="gallery" role="list">
+          <!-- Card 1 -->
+          <article class="card" role="listitem">
+            <img class="thumb" src="images/Hanryo.png" alt="慶応4年1月1日時点 藩領分 サムネイル" loading="lazy">
+            <h3>慶応4年1月1日時点 藩領分</h3>
+            <p>幕末の藩領分</p>
+            <a class="btn" href="https://app.kumoy.io/public/map/27629125-f85b-49e1-a2b2-3f569d41a1f0#8.91/35.7442/139.6178" target="_blank" rel="noopener noreferrer">地図を開く</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" role="listitem">
+            <img class="thumb" src="images/huhanken.png" alt="府藩県三治制 サムネイル" loading="lazy">
+            <h3>府藩県三治制</h3>
+            <p>府藩県三治制</p>
+            <a class="btn" href="https://app.kumoy.io/public/map/22e33578-87ee-4b1d-8173-6d1bcb53beb4#7.41/33.245/130.692" target="_blank" rel="noopener noreferrer">地図を開く</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card" role="listitem">
+            <img class="thumb" src="images/kokudaka.png" alt="江戸末期全国石高密度 サムネイル" loading="lazy">
+            <h3>江戸末期全国石高密度</h3>
+            <p>全国の石高密度を可視化した地図</p>
+            <a class="btn" href="https://app.kumoy.io/public/map/bd727f51-dee6-49ac-af9b-4f9ed7cd0fb4#7.71/38.272/141.093" target="_blank" rel="noopener noreferrer">地図を開く</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer style="margin-top:36px;color:var(--muted);font-size:0.9rem;">
+      <p>データ出典: <a href="https://github.com/yaoyue00085856/Kyudaka_agrivillage" target="_blank" rel="noopener noreferrer">Kyudaka_agrivillage</a> ・ ©遙嶽</p>
+    </footer>
+  </div>
+</body>
+</html>
